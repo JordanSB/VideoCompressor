@@ -1,1 +1,1 @@
-include ':app', ':silicompressor'
+include ':app', ':compressor', ':vidcompressor'
