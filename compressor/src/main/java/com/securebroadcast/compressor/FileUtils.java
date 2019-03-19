@@ -38,7 +38,7 @@ import java.io.FileFilter;
 import java.text.DecimalFormat;
 import java.util.Comparator;
 
-import static com.iceteck.silicompressorr.SiliCompressor.FILE_PROVIDER_AUTHORITY;
+import static com.securebroadcast.compressor.SiliCompressor.FILE_PROVIDER_AUTHORITY;
 
 /**
  * @version 2009-07-03
