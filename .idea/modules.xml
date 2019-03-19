@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SiliCompressor.iml" filepath="$PROJECT_DIR$/SiliCompressor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/silicompressor/silicompressor.iml" filepath="$PROJECT_DIR$/silicompressor/silicompressor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/compressor/compressor.iml" filepath="$PROJECT_DIR$/compressor/compressor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vidcompressor/vidcompressor.iml" filepath="$PROJECT_DIR$/vidcompressor/vidcompressor.iml" />
     </modules>
   </component>
 </project>
