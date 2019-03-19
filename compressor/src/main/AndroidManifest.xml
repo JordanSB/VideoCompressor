@@ -9,7 +9,7 @@
                  android:supportsRtl="true">
 
         <provider
-            android:name=".provider.GenericFileProvider"
+            android:name="com.securebroadcast.compressor.provider.GenericFileProvider"
             android:authorities="com.iceteck.silicompressor.provider"
             android:exported="false"
             android:grantUriPermissions="true">
