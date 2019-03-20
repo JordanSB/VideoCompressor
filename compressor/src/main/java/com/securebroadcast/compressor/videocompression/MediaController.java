@@ -38,9 +38,9 @@ public class MediaController {
     private boolean videoConvertFirstWrite = true;
 
     //Default values
-    private final static int DEFAULT_VIDEO_WIDTH = 1920;
-    private final static int DEFAULT_VIDEO_HEIGHT = 1080;
-    private final static int DEFAULT_VIDEO_BITRATE = 3000000;
+    private final static int DEFAULT_VIDEO_WIDTH = 1080;
+    private final static int DEFAULT_VIDEO_HEIGHT = 1920;
+    private final static int DEFAULT_VIDEO_BITRATE = 1000000;
 
     public static MediaController getInstance() {
         MediaController localInstance = Instance;
