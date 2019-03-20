@@ -185,7 +185,7 @@ public class SelectPictureActivity extends AppCompatActivity {
             String filePath = null;
             try {
 
-                filePath = SiliCompressor.Companion.with(mContext).compressVideo(paths[0], paths[1]);
+                filePath = SiliCompressor.with(mContext).compressVideo(paths[0], paths[1]);
 
             } catch (URISyntaxException e) {
                 e.printStackTrace();
