@@ -1,4 +1,4 @@
-<manifest package="com.iceteck.silicompressorr"
+<manifest package="com.securebroadcast.compressor.silicompressorr"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -10,7 +10,7 @@
 
         <provider
             android:name="com.securebroadcast.compressor.provider.GenericFileProvider"
-            android:authorities="com.iceteck.silicompressor.provider"
+            android:authorities="com.securebroadcast.compressor.SiliCompressor"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
