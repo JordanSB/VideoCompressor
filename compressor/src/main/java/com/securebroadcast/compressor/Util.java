@@ -12,10 +12,6 @@ import android.provider.MediaStore;
 
 import java.net.URISyntaxException;
 
-/**
- * Created by Larry Akah on 5/23/17.
- */
-
 public class Util {
 
     @SuppressLint("NewApi")

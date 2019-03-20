@@ -1,12 +1,5 @@
 package com.securebroadcast.compressor.videocompression;
 
-/*
-* By Jorge E. Hernandez (@lalongooo) 2015
-* */
-
-/*
-* Static class to define general configuration values of the application
-* */
 public class Config {
 
     /**

@@ -25,11 +25,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * @author Toure, Akah L
- * @version 1.1.1
- * Created by Toure on 28/03/2016.
- */
 public class SiliCompressor {
 
     private static final String LOG_TAG = SiliCompressor.class.getSimpleName();
@@ -56,20 +51,9 @@ public class SiliCompressor {
 
     }
 
-    /**
-     * Perform background video compression. Make sure the videofileUri and destinationUri are valid
-     * resources because this method does not account for missing directories hence your converted file
-     * could be in an unknown location
-     * This uses default values for the converted videos
-     *
-     * @param videoFilePath  source path for the video file
-     * @param destinationDir destination directory where converted file should be saved
-     * @return The Path of the compressed video file
-     */
     public String compressVideo(String videoFilePath, String destinationDir) throws URISyntaxException {
         return compressVideo(videoFilePath, destinationDir, 0, 0, 0);
     }
-
 
     /**
      * Perform background video compression. Make sure the videofileUri and destinationUri are valid
@@ -84,7 +68,7 @@ public class SiliCompressor {
      * @return The Path of the compressed video file
      */
     public String compressVideo(String videoFilePath, String destinationDir, int outWidth, int outHeight, int bitrate) throws URISyntaxException {
-        boolean isconverted = MediaController.getInstance().convertVideo(videoFilePath, new File(destinationDir), outWidth, outHeight, bitrate);
+        boolean isconverted = MediaController.getInstance().convertVideo(videoFilePath, new File(destinationDir), 1920, 1080, 3000000);
         if (isconverted) {
             Log.v(LOG_TAG, "Video Conversion Complete");
         } else {
@@ -94,7 +78,6 @@ public class SiliCompressor {
         return MediaController.cachedFile.getPath();
 
     }
-
 
     private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int height = options.outHeight;
@@ -115,29 +98,15 @@ public class SiliCompressor {
         return inSampleSize;
     }
 
-    /**
-     * Fluent API for creating {@link SiliCompressor} instances.
-     */
     public static class Builder {
 
         private final Context context;
-
-
-        /**
-         * @param context Context from which the library is called
-         * Start building a new {@link SiliCompressor} instance.
-         */
         public Builder(Context context) {
             if (context == null) {
                 throw new IllegalArgumentException("Context must not be null.");
             }
             this.context = context.getApplicationContext();
         }
-
-
-        /**
-         * Create the {@link SiliCompressor} instance.
-         */
         public SiliCompressor build() {
             Context context = this.context;
 

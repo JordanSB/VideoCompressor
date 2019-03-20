@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SiliCompressor.iml" filepath="$PROJECT_DIR$/SiliCompressor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VideoCompressor.iml" filepath="$PROJECT_DIR$/VideoCompressor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/compressor/compressor.iml" filepath="$PROJECT_DIR$/compressor/compressor.iml" />
       <module fileurl="file://$PROJECT_DIR$/vidcompressor/vidcompressor.iml" filepath="$PROJECT_DIR$/vidcompressor/vidcompressor.iml" />

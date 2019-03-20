@@ -1,10 +1,5 @@
 package com.securebroadcast.compressor.videocompression;
 
-/**
- * @Author By Jorge E. Hernandez (@lalongooo) 2015
- * @Co-Author Akah Larry (@larrytech7) 2017
- */
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.media.MediaCodec;
@@ -43,9 +38,9 @@ public class MediaController {
     private boolean videoConvertFirstWrite = true;
 
     //Default values
-    private final static int DEFAULT_VIDEO_WIDTH = 640;
-    private final static int DEFAULT_VIDEO_HEIGHT = 360;
-    private final static int DEFAULT_VIDEO_BITRATE = 450000;
+    private final static int DEFAULT_VIDEO_WIDTH = 1920;
+    private final static int DEFAULT_VIDEO_HEIGHT = 1080;
+    private final static int DEFAULT_VIDEO_BITRATE = 3000000;
 
     public static MediaController getInstance() {
         MediaController localInstance = Instance;
@@ -288,34 +283,25 @@ public void scheduleVideoConvert(String path, File dest) {
         int rotateRender = 0;
 
         File cacheFile = new File(destDir,
-                "VIDEO_" + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date()) + ".mp4"
+                "VIDEO_" + new SimpleDateFormat("ddMMyyyy_HHmmss", Locale.UK).format(new Date()) + ".mp4"
         );
 
-        if (Build.VERSION.SDK_INT < 18 && resultHeight > resultWidth && resultWidth != originalWidth && resultHeight != originalHeight) {
+        if (rotationValue == 90) {
             int temp = resultHeight;
             resultHeight = resultWidth;
             resultWidth = temp;
-            rotationValue = 90;
+            rotationValue = 0;
             rotateRender = 270;
-        } else if (Build.VERSION.SDK_INT > 20) {
-            if (rotationValue == 90) {
-                int temp = resultHeight;
-                resultHeight = resultWidth;
-                resultWidth = temp;
-                rotationValue = 0;
-                rotateRender = 270;
-            } else if (rotationValue == 180) {
-                rotateRender = 180;
-                rotationValue = 0;
-            } else if (rotationValue == 270) {
-                int temp = resultHeight;
-                resultHeight = resultWidth;
-                resultWidth = temp;
-                rotationValue = 0;
-                rotateRender = 90;
-            }
+        } else if (rotationValue == 180) {
+            rotateRender = 180;
+            rotationValue = 0;
+        } else if (rotationValue == 270) {
+            int temp = resultHeight;
+            resultHeight = resultWidth;
+            resultWidth = temp;
+            rotationValue = 0;
+            rotateRender = 90;
         }
-
 
         File inputFile = new File(path);
         if (!inputFile.canRead()) {
@@ -342,7 +328,6 @@ public void scheduleVideoConvert(String path, File dest) {
                 mediaMuxer = new MP4Builder().createMovie(movie);
                 extractor = new MediaExtractor();
                 extractor.setDataSource(inputFile.toString());
-
 
                 if (resultWidth != originalWidth || resultHeight != originalHeight) {
                     int videoIndex;
@@ -718,9 +703,9 @@ public void scheduleVideoConvert(String path, File dest) {
         }*/
 
         //inputFile.delete();
-        Log.e("ViratPath",path+"");
-        Log.e("ViratPath",cacheFile.getPath()+"");
-        Log.e("ViratPath",inputFile.getPath()+"");
+        Log.i("ViratPath",path+"");
+        Log.i("ViratPath",cacheFile.getPath()+"");
+        Log.i("ViratPath",inputFile.getPath()+"");
 
 
        /* Log.e("ViratPath",path+"");
@@ -755,8 +740,8 @@ public void scheduleVideoConvert(String path, File dest) {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-         // cacheFile.delete();
-       // inputFile.delete();
+        cacheFile.delete();
+        inputFile.delete();
         return true;
     }
 
