@@ -740,8 +740,8 @@ public void scheduleVideoConvert(String path, File dest) {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-        cacheFile.delete();
-        inputFile.delete();
+        /*cacheFile.delete();
+        inputFile.delete();*/
         return true;
     }
 
