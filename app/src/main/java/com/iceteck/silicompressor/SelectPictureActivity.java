@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.securebroadcast.compressor.SiliCompressor;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -37,7 +38,7 @@ public class SelectPictureActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = SelectPictureActivity.class.getSimpleName();
 
-    public static final String FILE_PROVIDER_AUTHORITY = "com.iceteck.silicompressor.provider";
+    public static final String FILE_PROVIDER_AUTHORITY = "com.securebroadcast .silicompressor.provider";
     private static final int MY_PERMISSIONS_REQUEST_WRITE_STORAGE_VID = 2;
     private static final int REQUEST_TAKE_VIDEO = 200;
     private static final int TYPE_IMAGE = 1;

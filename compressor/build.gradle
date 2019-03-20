@@ -1,12 +1,10 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
-
 group = 'com.github.JordanSB'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "28.0.2"
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         minSdkVersion 15
@@ -32,11 +30,12 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
 }
 
+/*
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'silicompressor'
 
-    publishedGroupId = 'com.iceteck.silicompressorr'
+    //publishedGroupId = 'com.iceteck.silicompressorr'
     libraryName = 'SiliCompressor'
     artifact = 'silicompressor'
 
@@ -45,4 +44,4 @@ ext {
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
-}
+}*/
