@@ -1,30 +1,13 @@
 package com.securebroadcast.compressor;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.media.ExifInterface;
-import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import com.securebroadcast.compressor.videocompression.MediaController;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URISyntaxException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 public class SiliCompressor {
 
     private static final String LOG_TAG = SiliCompressor.class.getSimpleName();

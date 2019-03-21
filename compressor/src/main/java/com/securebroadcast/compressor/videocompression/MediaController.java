@@ -40,7 +40,7 @@ public class MediaController {
     //Default values
     private final static int DEFAULT_VIDEO_WIDTH = 1920;
     private final static int DEFAULT_VIDEO_HEIGHT = 1080;
-    private final static int DEFAULT_VIDEO_BITRATE = 8000000;
+    private final static int DEFAULT_VIDEO_BITRATE = 6000000;
 
     public static MediaController getInstance() {
         MediaController localInstance = Instance;
