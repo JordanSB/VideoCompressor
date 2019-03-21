@@ -40,7 +40,7 @@ public class MediaController {
     //Default values
     private final static int DEFAULT_VIDEO_WIDTH = 1920;
     private final static int DEFAULT_VIDEO_HEIGHT = 1080;
-    private final static int DEFAULT_VIDEO_BITRATE = 2000000;
+    private final static int DEFAULT_VIDEO_BITRATE = 3000000;
 
     public static MediaController getInstance() {
         MediaController localInstance = Instance;
@@ -267,19 +267,21 @@ public void scheduleVideoConvert(String path, File dest) {
         retriever.setDataSource(path);
         String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
         String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
+        int widthInt = Integer.parseInt(width);
+        int heightInt = Integer.parseInt(height);
         String rotation = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION);
 
         long startTime = -1;
         long endTime = -1;
 
-        int resultWidth = outWidth > 0 ? outWidth : DEFAULT_VIDEO_WIDTH;
-        int resultHeight = outHeight > 0 ? outHeight : DEFAULT_VIDEO_HEIGHT;
+        int resultWidth = widthInt;
+        int resultHeight = heightInt;
 
         int rotationValue = Integer.valueOf(rotation);
         int originalWidth = Integer.valueOf(width);
         int originalHeight = Integer.valueOf(height);
 
-        int bitrate = outBitrate > 0 ? outBitrate : DEFAULT_VIDEO_BITRATE;
+        int bitrate = DEFAULT_VIDEO_BITRATE;
         int rotateRender = 0;
 
         File cacheFile = new File(destDir,
