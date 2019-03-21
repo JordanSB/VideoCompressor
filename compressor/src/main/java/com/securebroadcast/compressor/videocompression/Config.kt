@@ -1,6 +1,6 @@
-package com.securebroadcast.compressor.videocompression;
+package com.securebroadcast.compressor.videocompression
 
-public class Config {
+object Config {
 
     /**
      * Application root directory. All media files wi'll be stored here.
@@ -15,5 +15,5 @@ public class Config {
     /**
      * Application folder for video files
      */
-    public static final String VIDEO_COMPRESSOR_TEMP_DIR = "/Temp/";
+    val VIDEO_COMPRESSOR_TEMP_DIR = "/Temp/"
 }
