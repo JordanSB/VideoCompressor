@@ -1,21 +1,38 @@
 package com.securebroadcast.compressor;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import com.securebroadcast.compressor.videocompression.MediaController;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class SiliCompressor {
 
     private static final String LOG_TAG = SiliCompressor.class.getSimpleName();
+    public static String videoCompressionPath;
 
     static volatile SiliCompressor singleton = null;
     private static Context mContext;
-    public static final String FILE_PROVIDER_AUTHORITY = "com.securebroadcast.compressor.provider";
+    public static final String FILE_PROVIDER_AUTHORITY = "com.iceteck.silicompressor.provider";
 
     public SiliCompressor(Context context) {
         mContext = context;
@@ -51,16 +68,18 @@ public class SiliCompressor {
      * @return The Path of the compressed video file
      */
     public String compressVideo(String videoFilePath, String destinationDir, int outWidth, int outHeight, int bitrate) throws URISyntaxException {
-        boolean isconverted = MediaController.getInstance().convertVideo(videoFilePath, new File(destinationDir), 0, 0, 0);
+        boolean isconverted = MediaController.getInstance().convertVideo(videoFilePath, new File(destinationDir), 1920, 1080, 3000000);
         if (isconverted) {
             Log.v(LOG_TAG, "Video Conversion Complete");
         } else {
             Log.v(LOG_TAG, "Video conversion in progress");
         }
+
         return MediaController.cachedFile.getPath();
+
     }
 
-    /*private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+    private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int height = options.outHeight;
         final int width = options.outWidth;
         int inSampleSize = 1;
@@ -77,7 +96,7 @@ public class SiliCompressor {
         }
 
         return inSampleSize;
-    }*/
+    }
 
     public static class Builder {
 
