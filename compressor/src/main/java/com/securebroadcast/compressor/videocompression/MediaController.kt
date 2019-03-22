@@ -327,7 +327,7 @@ class MediaController {
 
                             val outputFormat = MediaFormat.createVideoFormat(MIME_TYPE, resultWidth, resultHeight)
                             outputFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, colorFormat)
-                            outputFormat.setInteger(MediaFormat.KEY_BIT_RATE, if (bitrate != 0) bitrate else 921600)
+                            outputFormat.setInteger(MediaFormat.KEY_BIT_RATE, if (bitrate != 0) bitrate else 5000000)
                             outputFormat.setInteger(MediaFormat.KEY_FRAME_RATE, 25)
                             outputFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 10)
                             if (Build.VERSION.SDK_INT < 18) {

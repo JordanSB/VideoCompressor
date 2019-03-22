@@ -31,7 +31,6 @@ public class SiliCompressor {
             }
         }
         return singleton;
-
     }
 
     public String compressVideo(String videoFilePath, String destinationDir) throws URISyntaxException {
@@ -57,9 +56,7 @@ public class SiliCompressor {
         } else {
             Log.v(LOG_TAG, "Video conversion in progress");
         }
-
         return MediaController.Companion.getCachedFile().getPath();
-
     }
 
     private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
