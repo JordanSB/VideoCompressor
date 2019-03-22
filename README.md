@@ -14,6 +14,8 @@ To effectively use this library, you must make sure you have added the following
 ```java
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
 ```
 #### Compress a video file and return the file path of the new video
 ```java
