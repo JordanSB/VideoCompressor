@@ -1,12 +1,10 @@
 package com.securebroadcast.compressor
 
-import android.content.ContentResolver
 import android.content.ContentUris
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.DatabaseUtils
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -68,9 +66,7 @@ object FileUtils {
     }
 
     fun isLocal(url: String?): Boolean {
-        return if (url != null && !url.startsWith("http://") && !url.startsWith("https://")) {
-            true
-        } else false
+        return url != null && !url.startsWith("http://") && !url.startsWith("https://")
     }
 
     fun isMediaUri(uri: Uri): Boolean {
