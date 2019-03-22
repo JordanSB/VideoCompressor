@@ -29,7 +29,7 @@ implementation 'com.github.JordanSB:VideoCompressor:v1.39'
 
 License
 --------
-Copyright 2016 [Teyou Toure Nathan][toure]
+Copyright 2019
 
 Licensed under the Apache License, Version 2.0 (the "License")
 
